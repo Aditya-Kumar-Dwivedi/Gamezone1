@@ -1,15 +1,32 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../screens/Home";
-import ReviewDetails from "../screens/ReviewDetails";
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const HomeStack = createStackNavigator();
+import Home from '../screens/Home';
+import ReviewDetails from '../screens/ReviewDetails';
 
-export default function myStacks() {
-  return (
-    <HomeStack.Navigator initialRouteName="GameZone" screenOptions={{ headerShown: false }}>
-      <HomeStack.Screen name="GameZone" component={Home} />
-      <HomeStack.Screen name="ReviewDetails" component={ReviewDetails} />
-    </HomeStack.Navigator>
-  );
-}
+const { Navigator, Screen } = createStackNavigator();
+
+export const HomeStack = () => (
+  <Navigator
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#eee',
+      },
+      headerTintColor: '#444',
+      height: 60
+    }}
+  >
+    <Screen
+      name='Home'
+      component={Home}
+      options={{ title: 'GameZone' }}
+    />
+    <Screen
+      name='ReviewDetails'
+      component={ReviewDetails}
+      options={{ title: 'Review Details' }}
+    />
+  </Navigator>
+);
+
+export default HomeStack;

@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import { StyleSheet } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import Navigator from './routes/Drawer';
+import { AppNavigator } from './routes/Drawer';
 
 const getFonts = () => Font.loadAsync({
     'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
     'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
-  });
+});
 
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
 
   if(fontsLoaded){
     return (
-      <Navigator />
+      <AppNavigator />
     )
   } else {
     return (
