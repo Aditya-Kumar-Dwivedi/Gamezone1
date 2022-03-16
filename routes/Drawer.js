@@ -10,11 +10,11 @@ const { Navigator, Screen } = createDrawerNavigator();
 export const RootDrawerNavigator = () => (
   <Navigator initialRouteName='Home'screenOptions={{headerShown: false}}>
     <Screen
-      name='Home'
+      name='GameZone'
       component={HomeStack}
     />
     <Screen
-      name='About'
+      name='About GameZone'
       component={AboutStack}
     />
   </Navigator>
